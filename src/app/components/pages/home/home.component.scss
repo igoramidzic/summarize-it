@@ -55,11 +55,19 @@
   }
 }
 
+.text-container-header {
+  font-size: 14px;
+  font-weight: 300;
+  color: $text_color;
+  font-family: $primary_font;
+  margin: 0 0 16px 0;
+}
+
 
 @media only screen and (min-width: 826px) {
   .grid-container {
     grid-gap: 13px;
-    grid-template-columns: 12fr 1fr 28fr;
+    grid-template-columns: 24fr 1fr 14fr;
   }
 }
 

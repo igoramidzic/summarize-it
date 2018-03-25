@@ -1,12 +1,7 @@
-<style>
-  .my-drop-zone { border: dotted 3px lightgray; }
-  .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
-  .another-file-over-class { border: dotted 3px green; }
-</style>
-
 <div class="full-text-container">
+  <h5 class="text-container-header">Full text</h5>
   <div class="card full-text-card">
-    <app-text-submission></app-text-submission>
+    <textarea [(ngModel)]="text" placeholder="Enter full text ..." class="text-area"></textarea>
   </div>
 
   <div class="action-btn-container">
@@ -21,6 +16,15 @@
         </div>
 
         <div>
+          <mat-form-field>
+            <mat-select placeholder="Sentences" [(ngModel)]="summariesService.numOfSentences">
+              <mat-option *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" [value]="i">
+                {{ i }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-button (click)="text = ''" [disabled]="!text" class="clear-btn secondary-btn">CLEAR</button>
+          <button mat-button (click)="onSummarize()" [disabled]="!text || statusService.status == 'summarizing'" class="primary-btn">SUMMARIZE</button>
         </div>
       </div>
     </div>

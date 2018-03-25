@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
 import { HttpClientModule } from '@angular/common/http';
+import {NgPipesModule} from 'ngx-pipes';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -41,6 +44,9 @@ import { SummaryContainerComponent } from './components/summary-container/summar
     ReactiveFormsModule,
     ClipboardModule,
     HttpClientModule,
+    NgPipesModule,
+    MatChipsModule,
+    MatSelectModule
   ],
   providers: [StatusService, SummariesService],
   bootstrap: [AppComponent]

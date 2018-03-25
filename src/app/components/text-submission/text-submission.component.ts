@@ -18,7 +18,9 @@ export class TextSubmissionComponent implements OnInit {
   }
 
   onSummarize () {
-    this.summariesService.submitNewSummaryRequest(this.text);
+    if (this.text) {
+      this.summariesService.getProcessedData(this.text, this.summariesService.numOfSentences);
+    }
   }
 
 }

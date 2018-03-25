@@ -26,21 +26,23 @@ $primary_font: 'Roboto', sans-serif;
 }
 
 .primary-btn {
+  letter-spacing: 1px;
   border: 1px solid $primary_color;
   background-color: $primary_color;
   color: #ffffff;
   font-size: 12px;
   font-weight: 400;
   min-width: unset;
-  padding: 0 25px;
 }
 
 .secondary-btn {
+  letter-spacing: 1px;
   border: 1px solid $border_color;
   background-color: #ffffff;
   color: $text_color;
   font-size: 12px;
   font-weight: 400;
+  min-width: unset;
 }
 
 .disabled-btn {
@@ -68,8 +70,20 @@ $primary_font: 'Roboto', sans-serif;
   }
 }
 
-@media only screen and (min-width: 1101px) {
+@media only screen and (min-width: 826px) {
+  .primary-btn {
+    padding: 0 25px;
+  }
+  .secondary-btn {
+    padding: 0 25px;
+  }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 825px) {
+  .primary-btn {
+    padding: 0 15px;
+  }
+  .secondary-btn {
+    padding: 0 15px;
+  }
 }

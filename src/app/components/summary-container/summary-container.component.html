@@ -1,14 +1,37 @@
 <div class="summarized-text-container">
+
+  <h5 class="text-container-header">Summary</h5>
   <div class="card summarized-text-card">
-    {{ summariesService.summary }}
-    <div *ngIf="!summariesService.summary" class="no-summarized-text-container">
+    <textarea *ngIf="summariesService.processedData?.summary" class="text-area" readonly>{{ summariesService.processedData?.summary }}</textarea>
+    <div *ngIf="!summariesService.processedData?.summary" class="no-summarized-text-container">
       Summarized text will appear here.
     </div>
   </div>
 
   <div class="action-btns-container">
-    <button mat-button ngxClipboard [cbContent]="summariesService.summary" [disabled]="!summariesService.summary" class="save-btn secondary-btn">SAVE</button>
-    <button mat-button [disabled]="!summariesService.summary" class="copy-btn primary-btn">COPY</button>
+    <div class="center-container">
+      <div class="center-content">
+        <div class="sentiment-container">
+          <mat-chip-list
+            class="mat-chip-list-stacked"
+            *ngIf="summariesService.processedData?.sentiment_value != null && summariesService.processedData?.summary">
+
+            <mat-chip selected="true" [ngClass]="{ 'good': summariesService.processedData?.sentiment_value >= 0.2, 'neutral': summariesService.processedData?.sentiment_value >= -0.2 && summariesService.processedData?.sentiment_value < 0.2, 'bad': summariesService.processedData?.sentiment_value < -0.2 }">
+              {{ summariesService.processedData?.sentiment_value | number:'1.1-1' }}
+            </mat-chip>
+
+          </mat-chip-list>
+
+        </div>
+
+
+        <div>
+          <button mat-button (click)="onSave()" [disabled]="!summariesService.processedData?.summary || summariesService.saved" class="save-btn secondary-btn">{{ summariesService.saved ? 'SAVED' : 'SAVE' }}</button>
+          <button mat-button ngxClipboard [cbContent]="summariesService.processedData?.summary" [disabled]="!summariesService.processedData?.summary" class="copy-btn primary-btn">COPY</button>
+        </div>
+
+      </div>
+    </div>
   </div>
 
 </div>
