@@ -1,0 +1,14 @@
+<div class="summarized-text-container">
+  <div class="card summarized-text-card">
+    {{ summariesService.summary }}
+    <div *ngIf="!summariesService.summary" class="no-summarized-text-container">
+      Summarized text will appear here.
+    </div>
+  </div>
+
+  <div class="action-btns-container">
+    <button mat-button ngxClipboard [cbContent]="summariesService.summary" [disabled]="!summariesService.summary" class="save-btn secondary-btn">SAVE</button>
+    <button mat-button [disabled]="!summariesService.summary" class="copy-btn primary-btn">COPY</button>
+  </div>
+
+</div>

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+// Colors
+$primary_color: #4F87FB;
+$primary_color_dark: #326DE6;
+$gray_accent_color: #BFC5D1;
+$gray_background_color: #F5F6FA;
+$border_color: #ECEDF1;
+$btn_hover_color: lighten($border_color, 5%);
+$accent_color: #6FCBFA;
+$text_color: #19243B;
+$success_color: #25C646;
+$danger_color: #E23D3D;
+$pending_color: #EFE934;
+
+// Fonts
+$primary_font: 'Roboto', sans-serif;
+
+.main-content-container {
+  padding: 26px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid $border_color;
+}
+
+.primary-btn {
+  border: 1px solid $primary_color;
+  background-color: $primary_color;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  min-width: unset;
+  padding: 0 25px;
+}
+
+.secondary-btn {
+  border: 1px solid $border_color;
+  background-color: #ffffff;
+  color: $text_color;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.disabled-btn {
+  border: 1px solid $border_color;
+  background-color: transparent;
+  color: $border_color;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.center-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: auto;
+  .center-content {
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 1101px) {
+}
+
+@media only screen and (max-width: 1100px) {
+}

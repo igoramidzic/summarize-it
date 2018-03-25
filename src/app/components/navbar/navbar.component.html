@@ -1,0 +1,18 @@
+<nav class="main-navbar">
+  <div class="center-container">
+    <div class="center-content">
+      <div class="left-container">
+        <button class="nav-btn logo-btn">summarize-it</button>
+      </div>
+      <div class="center-container-nav">
+        <span [ngClass]="{ 'online': statusService.status == 'online', 'summarizing': statusService.status == 'summarizing', 'offline': statusService.status == 'offline' }" >
+        <i class="status-icon fas fa-circle"></i>
+        </span>
+        <span class="status-text">{{ statusService.status }}</span>
+      </div>
+      <div class="right-container">
+        <button class="nav-btn user-btn">Igor Amidzic <i class="fas fa-caret-down"></i></button>
+      </div>
+    </div>
+  </div>
+</nav>

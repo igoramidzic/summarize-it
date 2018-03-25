@@ -1,0 +1,96 @@
+@import '../../app.component.scss';
+
+.full-text-container {
+  .full-text-card {
+    margin-bottom: 16px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    .text-area {
+      outline: none;
+      padding: 16px;
+      font-size: 14px;
+      border: none;
+      width: 100%;
+      min-height: 194px;
+
+      resize: none;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+  }
+
+  .action-btn-container {
+
+    .center-content {
+      align-items: center;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-pack: justify;
+      justify-content: flex-end;
+    }
+
+    .status-pending-indicator-container {
+      display: inline-block;
+      margin-right: 32px;
+
+      .spinner {
+        text-align: center;
+      }
+
+      .spinner > div {
+        width: 6px;
+        height: 6px;
+        background-color: $primary_color;
+
+        border-radius: 100%;
+        display: inline-block;
+        -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+      }
+
+      .spinner .bounce1 {
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+      }
+
+      .spinner .bounce2 {
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+      }
+
+      @-webkit-keyframes sk-bouncedelay {
+        0%, 80%, 100% { -webkit-transform: scale(0) }
+        40% { -webkit-transform: scale(1.0) }
+      }
+
+      @keyframes sk-bouncedelay {
+        0%, 80%, 100% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        } 40% {
+            -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+          }
+      }
+    }
+
+    .clear-btn {
+      margin-right: 16px;
+    }
+
+  }
+
+}
+
+@media only screen and (min-width: 826px) {
+  .status-pending-indicator-container {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 825px) {
+}

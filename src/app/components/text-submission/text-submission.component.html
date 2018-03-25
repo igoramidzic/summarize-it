@@ -1,0 +1,32 @@
+<style>
+  .my-drop-zone { border: dotted 3px lightgray; }
+  .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+  .another-file-over-class { border: dotted 3px green; }
+</style>
+
+<div class="full-text-container">
+  <div class="card full-text-card">
+    <app-text-submission></app-text-submission>
+  </div>
+
+  <div class="action-btn-container">
+    <div class="center-container">
+      <div class="center-content">
+        <div class="status-pending-indicator-container" >
+          <div class="spinner" *ngIf="statusService.status == 'summarizing'">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+
+        <div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</div>

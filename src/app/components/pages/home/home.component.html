@@ -1,0 +1,19 @@
+<div class="home-container">
+  <div class="grid-container">
+
+    <app-text-submission></app-text-submission>
+
+    <div class="status-pending-indicator-container">
+      <div class="spinner" *ngIf="statusService.status == 'summarizing'">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+
+    <app-summary-container></app-summary-container>
+
+  </div>
+</div>
+
+

@@ -1,0 +1,74 @@
+@import '../../../app.component.scss';
+
+.home-container {
+  color: $text_color;
+  font-family: $primary_font;
+  .grid-container {
+    display: grid;
+
+    .status-pending-indicator-container {
+      max-height: 200px;
+      .spinner {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+      }
+
+      .spinner > div {
+        width: 6px;
+        height: 6px;
+        background-color: $primary_color;
+
+        border-radius: 100%;
+        display: inline-block;
+        -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+      }
+
+      .spinner .bounce1 {
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+      }
+
+      .spinner .bounce2 {
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+      }
+
+      @-webkit-keyframes sk-bouncedelay {
+        0%, 80%, 100% { -webkit-transform: scale(0) }
+        40% { -webkit-transform: scale(1.0) }
+      }
+
+      @keyframes sk-bouncedelay {
+        0%, 80%, 100% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        } 40% {
+            -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+          }
+      }
+    }
+
+  }
+}
+
+
+@media only screen and (min-width: 826px) {
+  .grid-container {
+    grid-gap: 13px;
+    grid-template-columns: 12fr 1fr 28fr;
+  }
+}
+
+@media only screen and (max-width: 825px) {
+  .grid-container {
+    grid-gap: 16px;
+  }
+
+  .status-pending-indicator-container {
+    display: none;
+  }
+}

@@ -1,0 +1,94 @@
+@import '../../app.component.scss';
+
+.nav-btn {
+  height: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color .25s;
+  color: $text_color;
+  &:hover {
+    background-color: $btn_hover_color;
+  }
+  &:active {
+    background-color: lighten($border_color, 2%);
+  }
+}
+
+.main-navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid $border_color;
+  font-family: $primary_font;
+  .center-content {
+    height: 60px;
+    .left-container {
+      height: 100%;
+      .logo-btn {
+        border-right: 1px solid $border_color;
+        font-size: 15px;
+        font-weight: 300;
+      }
+    }
+
+    .center-container-nav {
+      cursor: default;
+      position: relative;
+      .status-text {
+        font-size: 13px;
+        font-weight: 300;
+        color: $text_color;
+        position: absolute;
+        top: 3px;
+        left: 15px;
+      }
+      .fa-circle {
+        font-size: 8px;
+        vertical-align: middle;
+        margin-right: 2px;
+      }
+      .online {
+        color: $success_color;
+      }
+      .summarizing {
+        color: $pending_color;
+      }
+      .offline {
+        color: $danger_color;
+      }
+    }
+
+    .right-container {
+      height: 100%;
+      .user-btn {
+        font-size: 12px;
+        border-left: 1px solid $border_color;
+        .fa-caret-down {
+          margin-left: 5px;
+          color: $gray_accent_color;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 826px) {
+  .logo-btn {
+    padding: 0 32px;
+  }
+  .user-btn {
+    padding: 0 32px;
+  }
+}
+
+@media only screen and (max-width: 825px) {
+  .logo-btn {
+    padding: 0 16px;
+  }
+  .user-btn {
+    padding: 0 16px;
+  }
+  .status-text {
+    display: none;
+  }
+}
